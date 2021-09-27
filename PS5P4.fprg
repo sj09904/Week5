@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="12243"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-26 09:23:06 PM"/>
+        <attribute name="created" value="MTIyNDM7REVTS1RPUC05NlJRMkpROzIwMjEtMDktMjU7MTA6NTc6MjEgQU07MjU4MA=="/>
+        <attribute name="edited" value="MTIyNDM7REVTS1RPUC05NlJRMkpROzIwMjEtMDktMjY7MDk6MjM6MDYgUE07MTI7Mjc1OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continue" type="String" array="False" size=""/>
+            <declare name="empolyeelastname" type="String" array="False" size=""/>
+            <declare name="hoursworked" type="Real" array="False" size=""/>
+            <declare name="rateofpay" type="Real" array="False" size=""/>
+            <declare name="grosspay" type="Real" array="False" size=""/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <declare name="totalgrosspay" type="Real" array="False" size=""/>
+            <declare name="averagegrosspay" type="Real" array="False" size=""/>
+            <input variable="continue"/>
+            <assign variable="counter" expression="0"/>
+            <assign variable="totalgrosspay" expression="0"/>
+            <assign variable="averagegrosspay" expression="0"/>
+            <if expression="continue = &quot;yes&quot;">
+                <then>
+                    <while expression="continue = &quot;yes&quot;">
+                        <assign variable="counter" expression="counter+1"/>
+                        <input variable="empolyeelastname"/>
+                        <input variable="hoursworked"/>
+                        <input variable="rateofpay"/>
+                        <if expression="hoursworked &gt; 40">
+                            <then>
+                                <assign variable="grosspay" expression="rateofpay*40+rateofpay*1.5*(hoursworked-40)"/>
+                            </then>
+                            <else>
+                                <assign variable="grosspay" expression="hoursworked*rateofpay"/>
+                            </else>
+                        </if>
+                        <assign variable="totalgrosspay" expression="grosspay+grosspay"/>
+                        <output expression="empolyeelastname" newline="True"/>
+                        <output expression="grosspay" newline="True"/>
+                        <input variable="continue"/>
+                    </while>
+                </then>
+                <else/>
+            </if>
+            <output expression="counter" newline="True"/>
+            <output expression="totalgrosspay" newline="True"/>
+            <if expression="counter = 0">
+                <then>
+                    <assign variable="averagegrosspay" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="averagegrosspay" expression="totalgrosspay/counter"/>
+                </else>
+            </if>
+            <output expression="averagegrosspay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

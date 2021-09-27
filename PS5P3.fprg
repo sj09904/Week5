@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="12243"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-25 02:16:57 PM"/>
+        <attribute name="created" value="MTIyNDM7REVTS1RPUC05NlJRMkpROzIwMjEtMDktMjU7MTA6NTc6MjEgQU07MjU4MA=="/>
+        <attribute name="edited" value="MTIyNDM7REVTS1RPUC05NlJRMkpROzIwMjEtMDktMjU7MDI6MTY6NTcgUE07ODsyNzE1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continue" type="String" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="exam1" type="Integer" array="False" size=""/>
+            <declare name="exam2" type="Integer" array="False" size=""/>
+            <declare name="average" type="Integer" array="False" size=""/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <input variable="continue"/>
+            <assign variable="counter" expression="0"/>
+            <if expression="continue = &quot;yes&quot;">
+                <then>
+                    <while expression="continue = &quot;yes&quot;">
+                        <assign variable="counter" expression="counter+1"/>
+                        <input variable="lastname"/>
+                        <input variable="exam1"/>
+                        <input variable="exam2"/>
+                        <assign variable="average" expression="(exam1+exam2)/2"/>
+                        <output expression="lastname" newline="True"/>
+                        <output expression="average" newline="True"/>
+                        <input variable="continue"/>
+                    </while>
+                </then>
+                <else/>
+            </if>
+            <output expression="counter" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
